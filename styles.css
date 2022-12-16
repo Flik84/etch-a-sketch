@@ -11,29 +11,59 @@ body {
 
 .title {
     text-align: center;
-    margin-top: 20px;
+    margin: 5px 0;
 }
 
-.btn-container {
+.slider-container {
+    margin: 0px auto;
     text-align: center;
-    margin: 20px auto;
+    vertical-align: middle;
+}
+
+.slider{
+    width: 20%;
+    margin: 0px auto;
+    vertical-align: middle;
+    }
+
+    .slider-number {
+        margin: 0px 10px;
+        font-size: 30px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
 .container {
     display: grid;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-
+    margin: 0 auto;
 }
 
-.square {
+.white {
     /* border: 0.05px solid rgb(238, 236, 221); */
     background-color: white;
     /* height: 1rem;
     width: 1rem; */
 }
 
+.black {
+    background-color: black;
+}
+
 .button {
-    padding: 5px 10px;
+    padding: 2.5px 5px;
+}
+
+.active {
+    color: white;
+    background-color: black;
+    vertical-align: middle;
 }
