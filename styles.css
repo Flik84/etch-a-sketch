@@ -45,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    width: auto;
 }
 
 .white {
@@ -59,7 +60,8 @@ body {
 }
 
 .button {
-    padding: 2.5px 5px;
+    padding: 3px 6px;
+    box-shadow: 0px 1px 1px 0px;
 }
 
 .active {

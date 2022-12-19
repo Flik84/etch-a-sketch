@@ -1,3 +1,5 @@
+
+// selectors
 const container = document.querySelector('.container');
 const gridButton = document.querySelector('.grid-button');
 const colorButton = document.querySelector('.color-button')
@@ -5,11 +7,10 @@ const slider = document.querySelector('.slider');
 const sliderValue = document.querySelector('.slider-number')
 
 
+// functions
 slider.oninput = function() {
-  sliderValue.innerHTML = this.value;
+  sliderValue.innerHTML = `${this.value} x ${this.value}`;
 }
-
-
 
 const randomInt = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -20,12 +21,13 @@ const changeColor = function () {
     return color;
 }
 
-function removeGrid(parent) {
+const removeGrid = function (parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
 
+// Event Listeners
 gridButton.addEventListener('click', function () {
     removeGrid(container);
     const gridSize = slider.value;
@@ -55,14 +57,20 @@ gridButton.addEventListener('click', function () {
 colorButton.addEventListener('click', function() {
     colorButton.classList.toggle('active');
     const squares = document.querySelectorAll('.square');
-    console.log(squares);
     if (colorButton.classList.contains('active')) {
-        squares.forEach(function (square) { 
-            square.style.backgroundColor = 'black';   
+        squares.forEach(function (square) {
+            if (square.classList.contains('white')) {
+                square.classList.remove('white');
+                square.classList.add('black');
+
+            }
         })
     } else {
-        squares.forEach(function (square) { 
-        square.style.backgroundColor = 'white';
+        squares.forEach(function (square) {
+            if (square.classList.contains('black')) {
+                square.classList.remove('black');
+                square.classList.add('white');
+            }
 })}});
 
 
